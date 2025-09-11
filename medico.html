@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gestión de Médicos</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+<h1>Gestión de Médicos</h1>
+
+<button class="btn-crear" onclick="abrirModalCrear()">➕ Crear Médico</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Especialidad</th>
+      <th>Teléfono</th>
+      <th>Correo</th>
+      <th>Dirección</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody id="tabla-medicos">
+    <!-- Se cargan dinámicamente -->
+  </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="cerrarModal()">×</span>
+    <h2 id="modal-titulo">Crear Médico</h2>
+    <input type="text" id="nombre" placeholder="Nombre" />
+    <input type="text" id="especialidad" placeholder="Especialidad" />
+    <input type="text" id="telefono" placeholder="Teléfono" />
+    <input type="email" id="correo" placeholder="Correo" />
+    <input type="text" id="direccion" placeholder="Dirección" />
+    <div class="modal-actions">
+      <button onclick="guardarMedico()" class="btn-crear" id="btn-guardar">Guardar</button>
+    </div>
+  </div>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>
