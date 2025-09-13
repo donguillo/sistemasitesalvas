@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sistema de Gestión</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Menú</h2>
+
+    <div class="menu-item" onclick="toggleSubmenu('medico')">
+      Médico <span class="arrow" id="arrow-medico">▼</span>
+    </div>
+    <div class="submenu" id="submenu-medico">
+      <button onclick="mostrarSeccion('medico-crear')">➕ Crear</button>
+      <button onclick="mostrarSeccion('medico-reporte')">📊 Reporte</button>
+    </div>
+
+    <div class="menu-item" onclick="toggleSubmenu('paciente')">
+      Paciente <span class="arrow" id="arrow-paciente">▼</span>
+    </div>
+    <div class="submenu" id="submenu-paciente">
+      <button onclick="mostrarSeccion('paciente-crear')">➕ Crear</button>
+      <button onclick="mostrarSeccion('paciente-reporte')">📊 Reporte</button>
+    </div>
+  </div>
+
+  <!-- Contenido dinámico -->
+  <div class="content" id="main-content">
+    <h1>Bienvenido al Sistema</h1>
+    <p>Selecciona una opción del menú lateral.</p>
+  </div>
+
+  <!-- Modal Médico -->
+  <div class="modal" id="modal-medico">
+    <div class="modal-content">
+      <span class="close-modal" onclick="cerrarModalMedico()">×</span>
+      <h2 id="modal-titulo-medico">Crear Médico</h2>
+      <input type="text" id="medico-t1" placeholder="Nombres" />
+      <input type="text" id="medico-t2" placeholder="Especialidad" />
+      <input type="text" id="medico-t3" placeholder="Teléfono" />
+      <input type="email" id="medico-t4" placeholder="Correo" />
+      <input type="text" id="medico-t5" placeholder="Dirección" />
+      <div class="modal-actions">
+        <button onclick="guardarMedico()" class="btn-crear">Guardar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Paciente -->
+  <div class="modal" id="modal-paciente">
+    <div class="modal-content">
+      <span class="close-modal" onclick="cerrarModalPaciente()">×</span>
+      <h2 id="modal-titulo-paciente">Crear Paciente</h2>
+      <input type="text" id="paciente-t1" placeholder="Documento" />
+      <input type="text" id="paciente-t2" placeholder="Nombres" />
+      <input type="text" id="paciente-t3" placeholder="Teléfono" />
+      <input type="email" id="paciente-t4" placeholder="Correo" />
+      <input type="text" id="paciente-t5" placeholder="Dirección" />
+      <div class="modal-actions">
+        <button id="guardarPacienteBtn" class="btn-crear">Guardar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/codigo.js"></script>
+</body>
+</html>
